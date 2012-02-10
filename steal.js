@@ -873,6 +873,7 @@
 				self.loaded(script);
 			}, function(error, src){
 				win.clearTimeout && win.clearTimeout(self.completeTimeout)
+				self.loaded(error.target);//Still try to call loaded, looks like this provides better stability, otherweise steal stops working complettly after such error
 				throw "steal.js : "+self.options.src+" not completed"
 			});
 			
