@@ -2161,7 +2161,10 @@ if (support.interactive) {
 		}
 	});
 	
-
+	steal.getSkin=function(){
+				print("Dummy flyaway skin")
+				return steal("./themes/flyaway/theme.less");
+	}
 	
 	
 	
