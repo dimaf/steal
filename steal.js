@@ -1108,9 +1108,10 @@
 				if ( ! steals[rootSrc] && ! steals[rootSrc + ".js"] ) {
 					steals[rootSrc] = stel;
 				} else{ // already have this steal
+					var curStel=stel;
 					stel = steals[rootSrc];
 					// extend the old stolen file with any new options
-					extend(stel.options, isString( options ) ? {} : options)
+					extend(stel.options, isString( options ) ? {} : curStel.options)
 				}
 			}
 			
